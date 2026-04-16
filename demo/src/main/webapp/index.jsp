@@ -5,13 +5,13 @@
     <title>JSP - Hello World</title>
     <link rel="stylesheet" type="text/css" href="./main/resources/style.css">
 </head>
-<body>,
+<body>
 
 <div>
     <h1><%= "Hello World!" %></h1>
 
     <form action="controller" method="GET">
-        <input type="hidden" name="command" value="login">
+        <input type="hidden" name="command" value="add_User">
 
         <label>Login:</label>
         <input type="text" name="login" placeholder="Введите логин">
