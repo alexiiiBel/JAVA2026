@@ -1,0 +1,12 @@
+2026-04-09 09:59:52.852 INFO  [http-nio-8080-exec-9] com.example.demo.command.impl.AddUserCommand : New user Drun has arrived
+2026-04-09 10:07:30.179 INFO  [http-nio-8080-exec-8] com.example.demo.command.impl.LoginCommand : Correct login
+2026-04-09 10:09:38.442 INFO  [http-nio-8080-exec-5] com.example.demo.command.impl.LoginCommand : Correct login
+2026-04-09 10:09:40.947 INFO  [http-nio-8080-exec-6] com.example.demo.command.impl.LogoutCommand : Correct logout
+2026-04-09 10:22:24.809 INFO  [http-nio-8080-exec-5] com.example.demo.command.impl.LoginCommand : Correct login
+2026-04-09 10:24:32.953 INFO  [http-nio-8080-exec-5] com.example.demo.command.impl.LoginCommand : Correct login
+2026-04-09 10:39:58.510 INFO  [http-nio-8080-exec-5] com.example.demo.command.impl.LoginCommand : Correct login
+2026-04-09 10:40:02.345 INFO  [http-nio-8080-exec-6] com.example.demo.command.impl.LogoutCommand : Correct logout
+2026-04-09 10:46:35.391 INFO  [http-nio-8080-exec-4] com.example.demo.command.impl.LoginCommand : Correct login
+2026-04-09 10:46:46.907 INFO  [http-nio-8080-exec-8] com.example.demo.command.impl.LogoutCommand : Correct logout
+2026-04-16 10:38:57.336 WARN  [http-nio-8080-exec-5] com.example.demo.command.impl.AddUserCommand : Validation failed for user: &lt;script&gt;alert&#40;1&#41;&lt;/script&gt;
+2026-04-16 10:39:39.939 WARN  [http-nio-8080-exec-10] com.example.demo.command.impl.AddUserCommand : Validation failed for user: &lt;script&gt;alert&#40;1&#41;&lt;/script&gt;
