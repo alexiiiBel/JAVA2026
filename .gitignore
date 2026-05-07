@@ -1,24 +1,43 @@
-# Compiled class file
+# Compiled files
+target/
 *.class
 
-# Log file
+# Logs
+logs/
 *.log
 
-# BlueJ files
-*.ctxt
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# VS Code
+.vscode/
+
+# Mac OS
+.DS_Store
+
+# Maven wrapper (оставляем, это нормально)
+!.mvn/wrapper/maven-wrapper.jar
+
+# Sensitive data (если есть)
+# *.properties
+# *.yml
