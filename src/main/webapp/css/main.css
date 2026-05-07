@@ -1,0 +1,367 @@
+@import url('base.css');
+@import url('forms.css');
+@import url('tables.css');
+@import url('errors.css');
+@import url('pagination.css');
+
+/* ── Auth layout (login / register) ────────────────────────────────── */
+body.auth-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-bg);
+    padding: 32px 20px;
+}
+
+body.auth-page .card {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* ── App layout (dashboard pages) ──────────────────────────────────── */
+body.app-page {
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Navbar ────────────────────────────────────────────────────────── */
+.navbar {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: saturate(180%) blur(8px);
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar-brand {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.navbar-brand:hover { color: var(--color-text); text-decoration: none; }
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+}
+
+.navbar-nav a {
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: background var(--transition), color var(--transition);
+    text-decoration: none;
+}
+.navbar-nav a:hover {
+    background: var(--color-surface-hover);
+    color: var(--color-text);
+}
+.navbar-nav a.active {
+    background: var(--color-surface-hover);
+    color: var(--color-text);
+}
+
+.navbar-user {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.navbar-user .username {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.navbar-user a:not(.btn-logout):not(.locale-btn) {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: color var(--transition);
+}
+.navbar-user a:not(.btn-logout):not(.locale-btn):hover {
+    color: var(--color-text);
+}
+
+.navbar-user .btn-logout {
+    font-size: 0.8125rem;
+    padding: 5px 12px;
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-strong);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    transition: all var(--transition);
+    text-decoration: none;
+}
+.navbar-user .btn-logout:hover {
+    background: var(--color-danger);
+    color: #fff;
+    border-color: var(--color-danger);
+}
+
+/* ── Page wrapper ──────────────────────────────────────────────────── */
+.page-wrapper {
+    flex: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+.page-wrapper--narrow { max-width: 600px; }
+
+/* ── Page header ───────────────────────────────────────────────────── */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.page-header h2 { margin: 0; }
+
+/* ── Card ──────────────────────────────────────────────────────────── */
+.card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+}
+
+.card--centered { text-align: center; }
+
+.card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+/* ── Auth brand header ─────────────────────────────────────────────── */
+.auth-brand {
+    text-align: center;
+    margin-bottom: 28px;
+}
+.auth-brand .logo {
+    font-size: 1.75rem;
+    margin-bottom: 6px;
+}
+.auth-brand h1 {
+    font-size: 1.375rem;
+    color: var(--color-text);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-bottom: 6px;
+}
+.auth-brand p {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: all var(--transition);
+    white-space: nowrap;
+    line-height: 1.4;
+    font-family: inherit;
+}
+.btn:hover { text-decoration: none; }
+.btn:focus-visible { outline: none; box-shadow: var(--shadow-focus); }
+
+.btn-primary {
+    background: var(--color-text);
+    color: var(--color-surface);
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+.btn-primary:hover { background: #000; color: var(--color-surface); }
+
+.btn-sm {
+    padding: 4px 10px;
+    font-size: 0.8125rem;
+}
+
+.btn-outline {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-strong);
+    color: var(--color-text);
+}
+.btn-outline:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-border-strong);
+}
+
+.btn-danger {
+    background: var(--color-surface);
+    color: var(--color-danger);
+    border: 1px solid var(--color-border-strong);
+}
+.btn-danger:hover {
+    background: var(--color-danger);
+    color: #fff;
+    border-color: var(--color-danger);
+}
+
+.btn-success {
+    background: var(--color-surface);
+    color: var(--color-success);
+    border: 1px solid var(--color-border-strong);
+}
+.btn-success:hover {
+    background: var(--color-success);
+    color: #fff;
+    border-color: var(--color-success);
+}
+
+/* ── Auth footer link ──────────────────────────────────────────────── */
+.auth-footer {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+.auth-footer a { font-weight: 500; }
+
+/* ── Empty state ───────────────────────────────────────────────────── */
+.empty-state {
+    text-align: center;
+    padding: 56px 24px;
+    color: var(--color-text-muted);
+}
+.empty-state .empty-icon {
+    font-size: 2.25rem;
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
+.empty-state p { margin-bottom: 16px; color: var(--color-text-muted); }
+
+.empty-state-text {
+    text-align: center;
+    padding: 40px 24px;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+/* ── Locale switcher ───────────────────────────────────────────────── */
+.locale-switcher {
+    display: flex;
+    gap: 1px;
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-md);
+    padding: 2px;
+}
+
+.locale-switcher--centered {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.locale-btn {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: all var(--transition);
+    letter-spacing: 0.04em;
+}
+
+.locale-btn:hover {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.locale-btn.active {
+    background: var(--color-surface);
+    color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ── Search bar (phone book) ───────────────────────────────────────── */
+.search-bar {
+    position: relative;
+    margin-bottom: 16px;
+}
+.search-bar input[type="search"] {
+    padding-left: 14px;
+}
+.search-spinner {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    pointer-events: none;
+}
+
+/* ── Remember-me row ───────────────────────────────────────────────── */
+.form-checkbox-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.form-checkbox-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+.form-checkbox-row label {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    margin: 0;
+}
+
+/* ── Form actions row (submit + cancel) ────────────────────────────── */
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+.form-actions .btn-primary { flex: 1; width: auto; }
+.form-actions .btn-outline { flex: 0 0 auto; }

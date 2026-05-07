@@ -1,0 +1,97 @@
+/* ── Alert / flash messages ─────────────────────────────────────────── */
+.alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 11px 14px;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    border: 1px solid transparent;
+}
+
+.alert-icon {
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.alert-success {
+    background: var(--color-success-light);
+    color: var(--color-success-dark);
+    border-color: rgba(10, 122, 62, 0.18);
+}
+.alert-danger {
+    background: var(--color-danger-light);
+    color: var(--color-danger-dark);
+    border-color: rgba(217, 32, 32, 0.18);
+}
+.alert-warning {
+    background: var(--color-warning-light);
+    color: var(--color-warning);
+    border-color: rgba(180, 83, 9, 0.18);
+}
+.alert-info {
+    background: var(--color-info-light);
+    color: var(--color-info);
+    border-color: rgba(3, 105, 161, 0.18);
+}
+
+/* ── Error pages ───────────────────────────────────────────────────── */
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg);
+    padding: 24px;
+}
+
+.error-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 48px 40px;
+    text-align: center;
+    max-width: 440px;
+    width: 100%;
+}
+
+.error-code {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 16px;
+    color: var(--color-text);
+    letter-spacing: -0.04em;
+    font-family: var(--font-mono);
+}
+
+.error-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+}
+
+.error-desc {
+    color: var(--color-text-muted);
+    margin-bottom: 28px;
+    font-size: 0.9375rem;
+}
+
+.error-details {
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    font-size: 0.78rem;
+    font-family: var(--font-mono);
+    color: var(--color-text-muted);
+    margin-bottom: 24px;
+    text-align: left;
+    word-break: break-word;
+}
